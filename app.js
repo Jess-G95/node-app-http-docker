@@ -22,7 +22,7 @@ const server = http.createServer(async (req, res) => {
     //log data
     else if (req.url === "/trace" && req.method === "POST") {
         let trace_data = await getReqData(req);
-        console.log(JSON.parse(todo_data));
+        console.log(JSON.parse(trace_data));
         // set the status code and content-type
         res.writeHead(200, { "Content-Type": "application/json" }); //was 200
         //send the todo
