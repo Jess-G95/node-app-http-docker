@@ -26,7 +26,7 @@ const server = http.createServer(async (req, res) => {
         // set the status code and content-type
         res.writeHead(200, { "Content-Type": "application/json" }); //was 200
         //send the todo
-        res.end(JSON.parse(trace_data));
+        res.end(trace_data);
     }
 
     //Health check and uptime endpoint
