@@ -6,7 +6,7 @@ const { getReqData } = require("./utils");
 
 //const PORT = process.env.PORT || 5000;
 // Constants
-const PORT = 8080;
+const PORT = 443;
 const HOST = "localhost";
 
 const server = http.createServer(async (req, res) => {
@@ -17,6 +17,16 @@ const server = http.createServer(async (req, res) => {
         res.writeHead(200, { "Content-Type": "application/json" });
         // send the data
         res.end("Welcome, this is your Home page\n");
+    }
+    
+    //log data
+    else if (req.url === "/trace" && req.method === "POST") {
+        let trace_data = await getReqData(req);
+        console.log(JSON.parse(todo_data));
+        // set the status code and content-type
+        res.writeHead(200, { "Content-Type": "application/json" }); //was 200
+        //send the todo
+        res.end();
     }
 
     //Health check and uptime endpoint
