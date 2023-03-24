@@ -39,6 +39,10 @@ For getting started with a RESTFUL api server locally using [docker](https://doc
   |     **404**     |    `Not Found`    |
   
 
+## Project Setup AWS
+
+
+
 ## Project setup 💼
 
 Clone the repository on your machine
@@ -51,6 +55,7 @@ Clone the repository on your machine
 ```shell
 cd node-app-http-docker
 ```
+
 
 💡 Prequisite / Assumption
 - You have`docker` installed and running on your machine.
