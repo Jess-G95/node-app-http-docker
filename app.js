@@ -124,9 +124,9 @@ const server = http.createServer(async (req, res) => {
     else if (req.url === "/api/trace" && req.method === "POST") {
         // get the data sent along
         let todo_data = await getReqData(req);
+        console.log(JSON.parse(todo_data));
         // set the status code and content-type
         res.writeHead(200, { "Content-Type": "application/json" }); //was 200
-        console.log(JSON.parse(todo_data));
     }
 
     // /api/todos/ : POST
