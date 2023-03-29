@@ -111,7 +111,7 @@ const server = http.createServer(async (req, res) => {
     }
     
     // /api/trace/ : POST
-    else if (req.url === "/trace" && req.method === "POST") {
+    else if (req.url.startsWith("/trace") && req.method === "POST") {
         // get the data sent along
         let todo_data = await getReqData(req);
         // create the todo
