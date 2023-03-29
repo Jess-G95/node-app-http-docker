@@ -117,7 +117,7 @@ const server = http.createServer(async (req, res) => {
         // create the todo
         console.log("Checking URL Parameters");
         console.log();
-        console.log(req.url.search);
+        console.log(req.url);
         //for (const [key, value] of req.url.searchParams.entries()) {
         //  console.log(`${key}, ${value}`);
         //};
