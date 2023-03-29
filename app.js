@@ -119,6 +119,15 @@ const server = http.createServer(async (req, res) => {
             res.end(JSON.stringify({ message: error }));
         }
     }
+    
+    // /api/trace/ : POST
+    else if (req.url === "/api/trace" && req.method === "POST") {
+        // get the data sent along
+        let todo_data = await getReqData(req);
+        // set the status code and content-type
+        res.writeHead(200, { "Content-Type": "application/json" }); //was 200
+        console.log(todo_data);
+    }
 
     // /api/todos/ : POST
     else if (req.url === "/api/todos" && req.method === "POST") {
