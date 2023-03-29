@@ -126,6 +126,7 @@ const server = http.createServer(async (req, res) => {
         let todo_data = await getReqData(req);
         // create the todo
         console.log(JSON.stringify(JSON.parse(todo_data), null, 2));
+        console.log("come on");
         // set the status code and content-type
         res.writeHead(200, { "Content-Type": "application/json" }); //was 200
     }
