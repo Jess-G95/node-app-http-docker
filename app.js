@@ -18,16 +18,6 @@ const server = http.createServer(async (req, res) => {
         // send the data
         res.end("Welcome, this is your Home page\n");
     }
-    
-    //log data
-    else if (req.url === "/trace" && req.method === "POST") {
-        let trace_data = await getReqData(req);
-        console.log(JSON.parse(trace_data));
-        // set the status code and content-type
-        res.writeHead(200, { "Content-Type": "application/json" }); //was 200
-        //send the todo
-        res.end(trace_data);
-    }
 
     //Health check and uptime endpoint
     else if (req.url === "/health" && req.method === "GET") {
@@ -121,14 +111,14 @@ const server = http.createServer(async (req, res) => {
     }
     
     // /api/trace/ : POST
-    else if (req.url === "/api/trace" && req.method === "POST") {
+    else if (req.url === "/trace" && req.method === "POST") {
         // get the data sent along
         let todo_data = await getReqData(req);
         // create the todo
         console.log(JSON.stringify(JSON.parse(todo_data), null, 2));
-        console.log("come on");
         // set the status code and content-type
         res.writeHead(200, { "Content-Type": "application/json" }); //was 200
+        res.end(todo_data);
     }
 
     // /api/todos/ : POST
