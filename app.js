@@ -115,6 +115,12 @@ const server = http.createServer(async (req, res) => {
         // get the data sent along
         let todo_data = await getReqData(req);
         // create the todo
+        console.log("Checking URL Parameters");
+        console.log();
+        for (const [key, value] of url.searchParams.entries()) {
+          console.log(`${key}, ${value}`);
+        };
+        console.log("Checking Post Body");
         console.log(JSON.stringify(JSON.parse(todo_data), null, 2));
         // set the status code and content-type
         res.writeHead(200, { "Content-Type": "application/json" }); //was 200
